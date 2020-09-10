@@ -1,0 +1,102 @@
+@import url('https://fonts.google.com/specimen/Saira+Stencil+One?query=saira+STE&sidebar.open=true&selection.family=Saira+Stencil+One');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: none;
+    text-decoration: none;
+    font-family: 'Saira Stencil One', cursive;
+}
+body{
+    background: #fff;
+}
+
+body h2{
+    text-align: center;
+    margin-left: auto;
+}
+
+.header{
+    display: block;
+    background: #87E3FF;
+}
+
+.btnCerrar{
+    text-align: right;
+}
+
+.btnCrear{
+    background: #5FC0DE;
+    padding: 4% 2% 4% 2%;
+    margin: 10% 10%;
+    font-size: 24px;
+    font-family: 'Saira Stencil One', cursive;
+    color: #D9D2CC;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.8s;
+}
+.btnCrear:hover{
+    background: #307B91;
+}
+
+.btnCrear::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    z-index: -1;
+    transition: 0,8s;
+}
+
+.wrapper{
+    position: fixed;
+    width: 30%;
+    height: 100%;
+    background: #D9D2CC;
+    padding: 30px 0;
+}
+
+.wrapper .sidebar h2{
+    color: #D9D2CC;
+    background: #5FC0DE;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li{
+    padding: 15px;
+    transition: 0.8s;
+    margin-top: 10%;
+}
+
+.wrapper .sidebar ul li a{
+    color: #fff;
+    display: block;
+}
+
+.wrapper .sidebar ul li:hover{
+    background: #307B91;
+}
+
+.wrapper .sidebar ul li:hover a{
+    color: #D9D2CC;
+}
+
+.contenedor{
+    flex: 1;
+    padding: 1rem;
+    overflow: scroll;
+}
+
+.formNew{
+    max-width: 800px;
+    width: 90%;
+    background-color: #87E3FF;
+    margin: 0 auto;
+    padding: 2rem;
+    color: #000000;
+    transition: background-color .5s ease-in-out;
+}

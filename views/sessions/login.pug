@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+html(lang="es")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://fonts.google.com/specimen/Saira+Stencil+One?query=saira+STE&sidebar.open=true&selection.family=Saira+Stencil+One")
+        link(rel="stylesheet", href='/static/css/login.css')
+        title Login
+    body
+        form(class="box" action="/sessions" method="POST")
+            h1 Login
+            -if(msgErr)
+                div.msgErr
+                    h3= msgErr
+            input(type="email", name="email" placeholder= "Coreo electronico")
+            input(type="password", name="password" placeholder= "Contraseña")
+            input(type="submit" value="Login")

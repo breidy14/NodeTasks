@@ -1,0 +1,7 @@
+extends ../layout
+
+block contenido
+        div.contenedor
+        form(action="/projects" method="POST" class="formNew" )
+            input(type="text" name="name" placeholder="Nombre del proyecto")
+            input(type="submit" value="Guardar")

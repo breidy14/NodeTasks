@@ -1,0 +1,7 @@
+extends ../layout
+
+block contenido
+    form(action=`/projects/${project.id}?_method=PUT` method="POST")
+        label(for="") Nombre
+        input(type="text" name="name" placeholder="Nombre del proyecto")
+        input(type="submit" value="Guardar")
