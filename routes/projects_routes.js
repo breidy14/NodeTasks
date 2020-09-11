@@ -16,9 +16,9 @@ router.get('/projects/new', ProjectsController.new); // esta ruta debe de ir ant
 router.get('/projects/:id/edit', ProjectsController.edit);
 
 router.route('/projects/:id')
-.get(ProjectsController.show)
 .put(ProjectsController.update)
 .delete(ProjectsController.destroy);
 
+router.get('/projects/:url', ProjectsController.show);
 
 module.exports = router;

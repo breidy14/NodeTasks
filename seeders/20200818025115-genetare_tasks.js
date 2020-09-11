@@ -7,7 +7,7 @@ module.exports = {
           name: 'Tarea de prueba',
           description:'Descripción de prueba',
           project_id: 1,
-          estado:'E',
+          estado: 0,
           createdAt: new Date(),
           updatedAt: new Date()
         },

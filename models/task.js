@@ -13,11 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     project_id: DataTypes.INTEGER,
     estado: {
-      type: DataTypes.CHAR(1),
-      validate: {
-        isIn: [['C', 'I']],
-        msg: 'Solo C o I'
-      }
+      type: DataTypes.INTEGER(1)
     }
   }, {});
   //Task.belongsTo(Proyectos);

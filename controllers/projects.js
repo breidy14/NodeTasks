@@ -42,7 +42,7 @@ module.exports = {
     
         if(!project) return next();
         // render a la vista
-        res.render('tasks', {
+        res.render('projects/show', {
             nombrePagina : 'Task',
             project,
             projects, 
@@ -104,7 +104,7 @@ module.exports = {
                 id: req.params.id
             }
         }).then((response)=> {
-            res.redirect('/projects/'+req.params.id)
+            res.redirect('/projects')
         }).catch(err=>{
             console.log(err);
         });

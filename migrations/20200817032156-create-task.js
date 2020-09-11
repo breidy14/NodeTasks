@@ -26,9 +26,9 @@ module.exports = {
         }
       },
       estado: {
-        type: Sequelize.CHAR(1),
+        type: Sequelize.INTEGER(1),
         allowNull: false,
-        defaultValue: 'I'
+        defaultValue: 0
       },
       createdAt: {
         allowNull: false,

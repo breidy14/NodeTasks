@@ -16,7 +16,7 @@ module.exports = {
       first_name: 'Breidy',
       last_name: 'Núñez',
       email: 'breidy1@gmail.com',
-      password_hash: 1234,
+      password_hash: "$2a$10$F/vYE3rVgW4lEFB10HafAeqz8LerrI5cSL0KV0EwsBjbTHNiRtIoC",
       createdAt: new Date(),
       updatedAt: new Date()
     }]);
