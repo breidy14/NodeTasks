@@ -1,5 +1,3 @@
-@import url('https://fonts.google.com/specimen/Saira+Stencil+One?query=saira+STE&sidebar.open=true&selection.family=Saira+Stencil+One');
-
 *{
     margin: 0;
     padding: 0;
@@ -18,7 +16,7 @@ body h2{
 
 .header{
     display: block;
-    background: #87E3FF;
+    background: #87e3ff ;
 }
 
 .btnCerrar{

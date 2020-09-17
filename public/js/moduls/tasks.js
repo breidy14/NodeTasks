@@ -1,7 +1,7 @@
 import axios from "axios";
 import Swal from 'sweetalert2';
 
-import {actualizarAvance} from '../funciones/avance';
+import {actualizarAvance} from '../function/avance';
 
 const tareas = document.querySelector('.listado-pendientes');
 

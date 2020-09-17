@@ -110,12 +110,28 @@ module.exports = {
         });
     },
     destroy: (req,res)=> {
-        Project.destroy({
+        /*Project.destroy({
             where: {
                 id: req.params.id
             }
         }).then((contElementosEliminados)=> {
             res.redirect('/projects/')
+        }).catch(err=>{
+            console.log(err);
+        });*/
+        Project.findOne({
+            where:{
+                url: req.params.url,
+            }
+        }).then(project =>{
+            Project.destroy({
+                where: { 
+                    id: project.id
+                }
+            })
+        }).then((contElementosEliminados)=>{
+            res.status(200).send('Proyecto Eliminado Correctamente');
+            //res.redirect('/projects');
         }).catch(err=>{
             console.log(err);
         });
