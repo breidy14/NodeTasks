@@ -110,15 +110,6 @@ module.exports = {
         });
     },
     destroy: (req,res)=> {
-        /*Project.destroy({
-            where: {
-                id: req.params.id
-            }
-        }).then((contElementosEliminados)=> {
-            res.redirect('/projects/')
-        }).catch(err=>{
-            console.log(err);
-        });*/
         Project.findOne({
             where:{
                 url: req.params.url,

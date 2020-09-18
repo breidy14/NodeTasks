@@ -4,10 +4,10 @@ block contenido
     .contenido-principal
         h1 #{nombrePagina} - #{project.name}
 
-        form.agregar-tarea(action=`/tasks/${project.url}` method="POST")
+        form.agregar-tarea(action=`/projects/${project.url}` method="POST")
             .campo
                 label(for="task") Tarea:
-                input.nombre-tarea(type="text" name="task" placeholder="Nombre Tarea")
+                input.nombre-tarea(type="text" name="name" placeholder="Nombre Tarea")
             .campo.enviar
                 input.boton.nueva-tarea(type="submit" value="Agregar") 
 

@@ -22,7 +22,7 @@ body h2{
 .btnCerrar{
     text-align: right;
 }
-
+/*Menú Bar*/
 .btnCrear{
     background: #5FC0DE;
     padding: 4% 2% 4% 2%;
@@ -82,6 +82,7 @@ body h2{
 .wrapper .sidebar ul li:hover a{
     color: #D9D2CC;
 }
+/*Menú Bar*/
 
 .contenedor{
     flex: 1;
@@ -97,4 +98,27 @@ body h2{
     padding: 2rem;
     color: #000000;
     transition: background-color .5s ease-in-out;
+}
+
+/*Barra Avance*/
+.barra-avance {
+    height: 30px;
+    border: 1px solid #999;
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.porcentaje {
+    width: 0%;
+    height: 100%;
+    background-color: #00B762;
+    background-image: linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    background-size: 1rem 1rem;
+    transition: width .3s ease;
+}
+/*Barra Avance*/
+
+.completo {
+    color: #00B762;
 }

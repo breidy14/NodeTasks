@@ -16,6 +16,7 @@ const authUser = require('./middlewares/auth_user');
 const indexRoutes = require('./routes/index_routes');
 const sessionsRoutes = require('./routes/sessions_routes');
 const projectsRoutes = require('./routes/projects_routes');
+const tasksRoutes = require('./routes/tasks_routes');
 
 
 //Config
@@ -43,6 +44,7 @@ app.use(authUser)
 app.use(indexRoutes);
 app.use(sessionsRoutes);
 app.use(projectsRoutes);
+app.use(tasksRoutes);
 
 app.get('/',function(req,res){
     res.render('index', {user: req.user, nombrePagina: 'Inicio'});

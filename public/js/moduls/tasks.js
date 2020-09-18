@@ -13,9 +13,8 @@ if(tareas) {
             const idTarea = icono.parentElement.parentElement.dataset.tarea;
 
             // request hacia /tareas/:id
-            const url = `${location.origin}/tareas/${idTarea}`;
-            
-            axios.patch(url, { idTarea })
+            const url = `${location.origin}/tasks/${idTarea}`;
+            axios.patch(url)
                 .then(function(respuesta){
                     if(respuesta.status === 200){
                         icono.classList.toggle('completo');
@@ -41,10 +40,9 @@ if(tareas) {
                         cancelButtonText: 'No, Cancelar'
                     }).then((result) => {
                     if (result.value) {
-                        const url = `${location.origin}/tareas/${idTarea}`;
-
+                        const url = `${location.origin}/tasks/${idTarea}`;
                         // enviar el delete por medio axios
-                        axios.delete(url, { params: { idTarea }})
+                        axios.delete(url)
                             .then(function(respuesta) {
                                 if(respuesta.status === 200) {
                                     // console.log(respuesta);
