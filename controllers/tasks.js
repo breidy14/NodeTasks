@@ -1,3 +1,5 @@
+const { NoEmitOnErrorsPlugin } = require('webpack');
+
 const Task = require('../models').Task;
 const Project = require('../models').Project;
 module.exports = {
@@ -9,17 +11,26 @@ module.exports = {
     create: async (req,res, next) => {
         const project = await Project.findOne({where: {url: req.params.url}});
         const project_id = project.id;
+        let errs = [];
         const name = req.body.name;
         const estado = 0;
-        Task.create({
-            name,
-            project_id,
-            estado
-        }).then(task=>{
+        
+        if(!name){
+            errs.push({'texto': 'Agrega un Nombre al Proyecto'})
+        }
+        if(errs.length > 0 ){
             res.redirect(`/projects/${req.params.url}`);
-        }).catch(err=>{
-            console.log(err);
-        })
+        }else{
+            Task.create({
+                name,
+                project_id,
+                estado
+            }).then(task=>{
+                res.redirect(`/projects/${req.params.url}`);
+            }).catch(err=>{
+                console.log(err);
+            })
+        }
     },
     update: async (req,res, next) => {
         const task = await Task.findOne({where:{id: req.params.id}})

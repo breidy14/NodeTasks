@@ -46,8 +46,5 @@ app.use(sessionsRoutes);
 app.use(projectsRoutes);
 app.use(tasksRoutes);
 
-app.get('/',function(req,res){
-    res.render('index', {user: req.user, nombrePagina: 'Inicio'});
-})
 
 app.listen(3000);

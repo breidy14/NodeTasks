@@ -6,10 +6,13 @@ const Task = require('../models').Task;
 module.exports = {
     index: (req,res) =>{
         /**/
+        //const user = req.session.user; Obtener user perfeccionar en v2
+        //const userName = req.session.user.first_name +" "+ req.session.user.last_name;
         const user_id = req.session.userId;
         Project.List(user_id)
         .then(projects =>{
             res.render('projects/index',{
+                //userName, Pasar nombre de user perfeccionar en v2
                 projects,
                 nombrePagina: 'Proyectos'
             });
@@ -69,9 +72,9 @@ module.exports = {
             nombrePagina: 'Proyectos'
         })
     },
-    create: (req,res) =>{
+    create: async (req,res,next) =>{
         const user_id = req.session.userId;
-        const projects = Project.List(user_id);
+        const projects = await Project.List(user_id);
         const name = req.body.name;
         let errs = [];
 
@@ -82,6 +85,7 @@ module.exports = {
         // En caso de haber errores al traer los datos insertados
         if(errs.length > 0 ){
             res.render('projects/new',{
+                errs,
                 projects,
                 nombrePagina: 'Nuevo Proyecto'
             })
@@ -93,7 +97,7 @@ module.exports = {
             }).then(project=>{
                 res.redirect('/projects');
             }).catch(err=>{
-                res.render('projects/new');
+                //res.render('projects/new');
                 console.log(err);
             })
         }

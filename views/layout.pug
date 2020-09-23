@@ -10,16 +10,20 @@ html(lang="es")
         title= nombrePagina
     body
         header.header
-            h1 UpTasks
-            -if (user)
-                h4= user.userName
-            form(action="/sessions?_method=DELETE" method="POST")
-                input(type="submit" value="Cerrar sesión" class='btn btnCerrar')
-        div.wrapper
+            h1 
+                a(href="/projects/") UpTasks
+            //-if(userName) Para V2
+                h4= userName
+            div.formCerrar
+                form(action="/sessions?_method=DELETE" method="POST")
+                    input(type="submit" value="Cerrar sesión" class='btnCerrar')
+        div.wrapper.aparecer
+            div.toggle-btn
+                <span>&#9776;</span>
             div.sidebar
+                a(href="/projects/new" class='btn btnCrear') Crear Proyecto
+                h2 Proyectos
                 ul
-                    //button(class='btn btnCrear') Crear Proyecto
-                    a(href="/projects/new" class='btn btnCrear') Crear Proyecto
                     -if(projects)
                         each projecto in projects
                             li

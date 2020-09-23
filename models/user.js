@@ -58,5 +58,21 @@ module.exports = (sequelize, DataTypes) => {
   User.associate = function(models) {
     // associations can be defined here
   };
+
+  User.beforeCreate(function(user,options){
+    //bcrypt.hash
+    return new Promise((res,rej)=>{
+
+      if(user.password){
+        bcrypt.hash(user.password, 10, function(error,hash){
+          user.password_hash = hash;
+          res();
+        })
+      };
+
+    });
+
+  });
+  
   return User;
 };

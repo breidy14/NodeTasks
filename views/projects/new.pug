@@ -1,7 +1,13 @@
 extends ../layout
 
 block contenido
-        div.contenedor
-        form(action="/projects" method="POST" class="formNew" )
-            input(type="text" name="name" placeholder="Nombre del proyecto")
-            input(type="submit" value="Guardar")
+    .container
+        div.contcentrado
+            h1 Nuevo Proyecto
+            if errs
+                each err in errs
+                    p= err.texto
+            form.form-task(action="/projects" method="POST" class="formNew" )
+                label(for="") Nombre:
+                input(type="text" name="name" placeholder="Nombre del proyecto")
+                input(type="submit" value="Guardar")
