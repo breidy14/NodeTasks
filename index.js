@@ -23,7 +23,10 @@ const tasksRoutes = require('./routes/tasks_routes');
 //Donde Cargar archivos estaticos, 
 //el /static es para poner que los recursos esten bajo ese prefijo, en dicho caso, por tanto que 
 //agregar el prefijo al llamar al archivo
-app.use('/static',express.static('public'));
+app.use('/static',express.static('public',{
+    etag: false,
+    maxAge:'5h' //despues que transcurra este tiempo, el navegador debe de borrar el cache, y hace una nueva copia
+}));
 app.use(boyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 //Habilitar pug

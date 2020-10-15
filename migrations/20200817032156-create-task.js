@@ -21,8 +21,8 @@ module.exports = {
         references: {
           model:'Projects',
           key: 'id',
-          onDelete: 'cascade',
-          onUpdate: 'cascade'
+          onDelete: 'CASCADE',
+          onUpdate: 'CASCADE'
         }
       },
       estado: {

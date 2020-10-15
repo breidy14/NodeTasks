@@ -18,8 +18,8 @@ module.exports = {
         references: {
           model:'Users',
           key: 'id',
-          onDelete: 'cascade',
-          onUpdate: 'cascade'
+          onDelete: 'CASCADE',
+          onUpdate: 'CASCADE'
         }
       },
       url:{
